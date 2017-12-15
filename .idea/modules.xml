@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FullPlayer.iml" filepath="$PROJECT_DIR$/FullPlayer.iml" />
+      <module fileurl="file://F:\Outgoing_Projects\FullPlayerProject\FullPlayer.iml" filepath="F:\Outgoing_Projects\FullPlayerProject\FullPlayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FullPlayerProject.iml" filepath="$PROJECT_DIR$/FullPlayerProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

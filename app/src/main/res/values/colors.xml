@@ -10,6 +10,9 @@
     <color name="colorGreenDrak">#2a9706</color>
     <color name="colorGreyCenter">#F1F1F1</color>
     <color name="colorGreyLittle">#333E3F41</color>
+    <color name="white">#ffffff</color>
 
     <color name="black">#000000</color>
+    <color name="statusGrey">#fafafa</color>
+    <color name="textGreenColor">#FF00CFA1</color>
 </resources>

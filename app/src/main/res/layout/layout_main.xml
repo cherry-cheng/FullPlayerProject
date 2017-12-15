@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="#fafafa"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/rl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:paddingBottom="16dp"
-        android:orientation="horizontal">
+        android:layout_height="50dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="18dp"
+            android:layout_centerVertical="true"
             android:textColor="#FF000000"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="16dp"
@@ -22,9 +22,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/home_icon_setting"
-            android:layout_marginLeft="237.3dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
             android:layout_marginTop="20dp"/>
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:background="@android:color/white"
@@ -50,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16px"
                 android:text="全播001"
-                android:textSize="15dp"
+                android:textSize="11dp"
                 android:layout_gravity="center"/>
         </LinearLayout>
         <LinearLayout
@@ -69,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16px"
                 android:text="信号强度"
-                android:textSize="15dp"
+                android:textSize="11dp"
                 android:layout_gravity="center"/>
         </LinearLayout>
         <LinearLayout
@@ -88,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16px"
                 android:text="90%"
-                android:textSize="15dp"
+                android:textSize="11dp"
                 android:layout_gravity="center"/>
         </LinearLayout>
     </LinearLayout>
@@ -103,30 +106,36 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="当前频道"
-                android:textColor="@color/colorGreen"
+                android:textColor="#FF00CFA1"
+                android:textSize="12dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="15dp"/>
+                android:gravity="center" />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="搜索频道"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="15dp"/>
+                android:textColor="#FF444444"
+                android:textSize="12dp"
+                android:gravity="center" />
         </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:background="@android:color/white"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
-        android:layout_marginTop="2dp"
         android:gravity="center"
-        android:paddingBottom="17dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
+        android:paddingBottom="17dp">
         
         <GridView
             android:id="@+id/gradView"
@@ -139,24 +148,23 @@
 
     </LinearLayout>
 
-<!--    <View
-        android:layout_below="@+id/topRelativeLayout"
-        android:layout_width="match_parent"
-        android:background="@android:color/white"
-        android:layout_height="1px"/>
+    <RelativeLayout
 
-    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:layout_marginBottom="2dp">
-    </LinearLayout>-->
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="更多频道，敬请期待"
-        android:gravity="bottom"
-        android:textSize="13dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更多频道，敬请期待"
+            android:layout_marginBottom="8dp"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/colorGreyLittle"
+            android:textSize="11dp"
+            android:gravity="bottom|center"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

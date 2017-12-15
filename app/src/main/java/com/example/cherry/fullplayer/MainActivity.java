@@ -8,6 +8,8 @@ import android.widget.GridView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.example.cherry.fullplayer.utils.StatusBarUtil;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,12 +24,16 @@ public class MainActivity extends AppCompatActivity {
     private GridView gradView = null;
     private List<Map<String, Object>> dataList;
     private SimpleAdapter simpAdapter;
-    private String[] ChannelDatas = {"CCTV-1", "CCTV-2", "东方频道", "安徽卫视", "北京卫视"};
+    private String[] ChannelDatas = {"CCTV-1", "CCTV-2", "东方频道", "安徽卫视", "北京卫视", "北京卫视", "北京卫视", "北京卫视", "北京卫视", "北京卫视", "北京卫视"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        StatusBarUtil.MIUISetStatusBarLightMode11(this, true); //指针对小米手机改变状态栏字体颜色
+//        StatusBarUtil.setStatusBarColor(this, R.color.statusGrey);
         setContentView(R.layout.layout_main);
+//        StatusBarUtil.StatusBarLightMode(this, StatusBarUtil.StatusBarLightMode(this));
+//        StatusBarUtil.MIUISetStatusBarLightMode(getWindow(), true);
         gradView = (GridView)findViewById(R.id.gradView);
         dataList = new ArrayList<Map<String, Object>>(); // step2
         simpAdapter = new SimpleAdapter(this, getData(), R.layout.grad_item_layout,
@@ -54,5 +60,10 @@ public class MainActivity extends AppCompatActivity {
             dataList.add(map);
         }
         return dataList;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }
