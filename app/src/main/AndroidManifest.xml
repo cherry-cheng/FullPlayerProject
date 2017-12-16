@@ -28,6 +28,7 @@
         <activity android:name=".activity.CityActivity"/>
         <activity android:name=".activity.DialogActivity"
             android:theme="@style/mytheme" />
+        <activity android:name=".activity.AboutUsActivity"/>
         <service android:name=".service.WifiDetectorService"/>
     </application>
 

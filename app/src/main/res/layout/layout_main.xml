@@ -19,6 +19,7 @@
             android:layout_marginLeft="16dp"
             android:text="上海市"/>
         <ImageView
+            android:id="@+id/settingsAbout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/home_icon_setting"

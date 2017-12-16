@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/textGreenColor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="20px"
+            android:src="@drawable/channeldt_icon_back"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="设置"
+            android:textSize="18dp"/>
+
+    </RelativeLayout>
+
+    <View style="@style/Divider"/>
+
+    <LinearLayout
+        android:id="@+id/Setting_WifiSignal"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF000000"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:text="调整信号强度"/>
+    </LinearLayout>
+
+    <View style="@style/DividerPadding"/>
+
+    <LinearLayout
+        android:id="@+id/Setting_ChangePwd"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF000000"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:text="修改设备密码"/>
+    </LinearLayout>
+
+    <View style="@style/DividerPadding"/>
+
+    <LinearLayout
+        android:id="@+id/Setting_ChangeDevice"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF000000"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:text="更换设备"/>
+    </LinearLayout>
+
+    <View style="@style/DividerPadding"/>
+
+    <LinearLayout
+        android:id="@+id/Setting_Aboutus"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF000000"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:text="关于我们"/>
+    </LinearLayout>
+
+    <View style="@style/DividerPadding"/>
+
+
+
+</LinearLayout>

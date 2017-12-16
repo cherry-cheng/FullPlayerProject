@@ -10,12 +10,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cherry.fullplayer.activity.AboutUsActivity;
 import com.example.cherry.fullplayer.activity.DialogActivity;
 import com.example.cherry.fullplayer.utils.StatusBarUtil;
 
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_search_again = null;
     private LinearLayout search_channel_ll = null;
     private Button bt_goSearch = null;
+    private ImageView settingsAbout = null;
     private Handler wifiHandler = null;
     private Timer wifiTimer = null;
     private static final int DIALOG_RESULT = 99;
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         search_process_ll = (LinearLayout) findViewById(R.id.search_process_ll);
         search_result_ll = (LinearLayout) findViewById(R.id.search_result_ll);
         bt_goSearch = (Button) findViewById(R.id.bt_goSearch);
+        settingsAbout = (ImageView) findViewById(R.id.settingsAbout);
         dataList = new ArrayList<Map<String, Object>>(); // step2
         simpAdapter = new SimpleAdapter(this, getData(), R.layout.grad_item_layout,
                 new String[]{"txt"}, new int[]{R.id.channel_title});
@@ -88,8 +92,16 @@ public class MainActivity extends AppCompatActivity {
         tv_search_channel.setOnClickListener(new searchChannelClickListener());
         bt_goSearch.setOnClickListener(new goSearchButtonLisner());
         tv_search_again.setOnClickListener(new tvSearchAgainLisner());
+        settingsAbout.setOnClickListener(new ivSettingsListenr());
     }
 
+    private class ivSettingsListenr implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
+        }
+    }
     //开启定时器
     private void startWifiTimer() {
         Message msg = new Message();
