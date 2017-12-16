@@ -3,24 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+<!--    <TextView
         android:id="@+id/item_city_alpha"
         android:layout_width="fill_parent"
         android:layout_height="25dp"
         android:background="#aaaaaa"
-        android:paddingLeft="13dip"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="#3399ff" />
+        android:textColor="#3399ff" />-->
 
     <TextView
         android:id="@+id/item_city_name"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_below="@id/item_city_alpha"
-        android:layout_margin="15.0dip"
+        android:layout_height="48dp"
         android:singleLine="true"
         android:text="name"
+        android:textSize="14dp"
+        android:gravity="center"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="#212121" />
+        android:textColor="#FF000000" />
 
 </RelativeLayout>

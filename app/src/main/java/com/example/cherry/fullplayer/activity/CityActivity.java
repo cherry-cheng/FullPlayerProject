@@ -1,13 +1,16 @@
 package com.example.cherry.fullplayer.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cherry.fullplayer.MainActivity;
 import com.example.cherry.fullplayer.R;
 import com.example.cherry.fullplayer.adapter.CityAdapter;
 import com.example.cherry.fullplayer.bean.CityBean;
@@ -27,6 +30,7 @@ public class CityActivity extends Activity {
     private QuickLocationBar mQuicLocationBar;
     private HashMap<String, Integer> alphaIndexer;
     private ArrayList<CityBean> mCityNames;
+    private ImageView ivSettings;
 
     /**
      * 数据源二维数组
@@ -163,6 +167,9 @@ public class CityActivity extends Activity {
                 .setOnTouchLitterChangedListener(new LetterListViewListener());
         overlay = (TextView) findViewById(R.id.city_dialog);
         mCityLit = (ListView) findViewById(R.id.city_list);
+        ivSettings = (ImageView) findViewById(R.id.ivSettings);
+        //关闭进度条
+        mCityLit.setVerticalScrollBarEnabled(false);
         mQuicLocationBar.setTextDialog(overlay);
         initList();
     }
@@ -173,6 +180,7 @@ public class CityActivity extends Activity {
         mCityLit.setAdapter(adapter);
         alphaIndexer = adapter.getCityMap();
         mCityLit.setOnItemClickListener(new CityListOnItemClick());
+        ivSettings.setOnClickListener(new ivSettingsClickListener());
     }
 
     private ArrayList<CityBean> getCityNames() {
@@ -189,6 +197,14 @@ public class CityActivity extends Activity {
         }
 
         return names;
+    }
+
+    private class ivSettingsClickListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent(CityActivity.this, MainActivity.class));
+        }
     }
 
     private class CityListOnItemClick implements AdapterView.OnItemClickListener {

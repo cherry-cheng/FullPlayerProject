@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/rl"
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="50dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:textSize="18dp"
             android:id="@+id/title_city"
             android:layout_centerVertical="true"
             android:textColor="#FF000000"
@@ -27,30 +28,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/ivSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/home_icon_setting"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="16dp"
+            android:layout_marginRight="12dp"
             android:layout_marginTop="20dp"/>
-        <TextView
-            android:text="热门城市"
-            android:layout_below="@+id/title_city"
-            android:textColor="#FF9B9B9B"
-            android:textSize="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="18dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
     </RelativeLayout>
 
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:layout_gravity="center"
         android:orientation="vertical">
 
@@ -59,8 +52,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:divider="#888888"
-            android:dividerHeight="2dp" />
+            android:divider="@color/dividerColor"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:dividerHeight="0.5dp" />
     </LinearLayout>
 
     <TextView
@@ -78,8 +73,8 @@
         android:layout_width="30.0dip"
         android:layout_height="fill_parent"
         android:layout_gravity="right|center"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="98dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginBottom="108dp"
         android:paddingBottom="2dp" />
 
 </FrameLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="268dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:background="@drawable/bg_radius"
+        android:orientation="vertical"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:src="@drawable/rotate_img_scan"/>
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="18dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="请移动设备天线，调整信号强度"
+            android:textColor="#8A000000"
+            android:textSize="11sp"/>
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.cherry.fullplayer.view.CheckBoxSample
+                android:id="@+id/no_hint_checkbox"
+                app:color_background="@color/button_color"
+                app:color_border="@color/colorGreyLittle"
+                app:size="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_ok"
+                android:gravity="center"
+                android:layout_marginLeft="8dp"
+                android:textSize="13sp"
+                android:textColor="#FFBBB8B9"
+                android:text="不再提醒"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:layout_marginLeft="48dp"
+                android:id="@+id/tv_back"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="@color/button_color"
+                android:text="我知道了"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/adContainer"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

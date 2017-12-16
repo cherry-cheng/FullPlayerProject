@@ -58,8 +58,8 @@ public class QuickLocationBar extends View {
         for (int i = 0; i < characters.length; i++) {
             // 对paint进行相关的参数设置
             paint.setColor(Color.parseColor("#FF00CFA1"));
-            paint.setTypeface(Typeface.DEFAULT_BOLD);
-            paint.setAntiAlias(true);
+//            paint.setTypeface(Typeface.DEFAULT_BOLD);
+//            paint.setAntiAlias(true);
             paint.setTextSize(150 * (float) width / 320);
             if (i == choose) {// choose变量表示当前显示的字符  ，若没有触摸则为-1
                 paint.setColor(Color.RED);

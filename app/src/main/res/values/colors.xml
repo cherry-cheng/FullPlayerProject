@@ -15,4 +15,7 @@
     <color name="black">#000000</color>
     <color name="statusGrey">#fafafa</color>
     <color name="textGreenColor">#FF00CFA1</color>
+    <color name="button_color">#FF00CFA1</color>
+    <color name="textBlackColor">#ff444444</color>
+    <color name="dividerColor">#f5f5f5</color>
 </resources>

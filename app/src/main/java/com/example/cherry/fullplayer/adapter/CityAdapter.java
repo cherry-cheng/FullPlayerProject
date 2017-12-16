@@ -68,8 +68,8 @@ public class CityAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.item_city_list, null);
             holder = new ViewHolder();
-            holder.alpha = (TextView) convertView
-                    .findViewById(R.id.item_city_alpha);
+//            holder.alpha = (TextView) convertView
+//                    .findViewById(R.id.item_city_alpha);
             holder.name = (TextView) convertView
                     .findViewById(R.id.item_city_name);
             convertView.setTag(holder);
@@ -82,10 +82,10 @@ public class CityAdapter extends BaseAdapter {
         String previewStr = (position - 1) >= 0 ? list.get(position - 1)
                 .getNameSort() : " ";
         if (!previewStr.equals(currentStr)) {
-            holder.alpha.setVisibility(View.VISIBLE);
-            holder.alpha.setText(currentStr);
+//            holder.alpha.setVisibility(View.VISIBLE);
+//            holder.alpha.setText(currentStr);
         } else {
-            holder.alpha.setVisibility(View.GONE);
+//            holder.alpha.setVisibility(View.GONE);
         }
         return convertView;
     }
