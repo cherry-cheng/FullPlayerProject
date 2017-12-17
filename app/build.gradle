@@ -5,7 +5,7 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.example.cherry.fullplayer"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -26,5 +26,6 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'com.github.pinguo-zhouwei:MZBannerView:v2.0.0'
     testCompile 'junit:junit:4.12'
 }

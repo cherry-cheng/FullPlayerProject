@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.cherry.fullplayer.activity.AboutUsActivity;
 import com.example.cherry.fullplayer.activity.DialogActivity;
+import com.example.cherry.fullplayer.activity.WifiConnectHintActivity;
 import com.example.cherry.fullplayer.utils.StatusBarUtil;
 
 import org.w3c.dom.Text;

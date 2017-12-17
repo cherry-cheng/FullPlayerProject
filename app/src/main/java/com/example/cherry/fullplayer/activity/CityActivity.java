@@ -203,7 +203,8 @@ public class CityActivity extends Activity {
 
         @Override
         public void onClick(View view) {
-            startActivity(new Intent(CityActivity.this, MainActivity.class));
+//            startActivity(new Intent(CityActivity.this, MainActivity.class));
+            startActivity(new Intent(CityActivity.this, WifiConnectHintActivity.class));
         }
     }
 
