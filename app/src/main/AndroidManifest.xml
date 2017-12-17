@@ -12,7 +12,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -24,11 +24,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".activity.CityActivity"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CityActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".activity.DialogActivity"
             android:theme="@style/mytheme" />
-        <activity android:name=".activity.AboutUsActivity"/>
+        <activity android:name=".activity.AboutUsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ChangePwdActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PwdConfirmDialogActivity"
+            android:theme="@style/mytheme"/>
+        <activity android:name=".activity.QpopActivity"
+            android:screenOrientation="portrait"/>
         <service android:name=".service.WifiDetectorService"/>
     </application>
 

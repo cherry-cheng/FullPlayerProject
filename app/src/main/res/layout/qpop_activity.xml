@@ -26,7 +26,7 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:textColor="@color/black"
-            android:text="设置"
+            android:text="关于我们"
             android:textSize="18dp"/>
 
     </RelativeLayout>
@@ -34,35 +34,57 @@
     <View style="@style/Divider"/>
 
     <LinearLayout
-        android:id="@+id/Setting_WifiSignal"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_marginLeft="16dp"
-        android:layout_height="48dp">
+        android:layout_marginTop="20dp"
+        android:layout_height="200dp">
 
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FF000000"
             android:textSize="15dp"
+            android:text="全播 个人版"
+            android:layout_gravity="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="版本：V1.0.0"
+            android:textColor="#FF9B9B9B"
+            android:textSize="13dp"
             android:layout_gravity="center"
-            android:text="调整信号强度"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
-
-    <View style="@style/DividerPadding"/>
 
     <LinearLayout
         android:id="@+id/Setting_ChangePwd"
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="16dp"
+        android:orientation="horizontal"
         android:layout_height="48dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="#FF000000"
             android:textSize="15dp"
+            android:layout_weight="1"
             android:layout_gravity="center"
-            android:text="修改设备密码"/>
+            android:text="微信公众号"/>
+        <TextView
+            android:text="Quanbo_APP"
+            android:textColor="#FF9B9B9B"
+            android:textSize="13dp"
+            android:layout_marginRight="16dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <View style="@style/DividerPadding"/>
@@ -79,7 +101,7 @@
             android:textColor="#FF000000"
             android:textSize="15dp"
             android:layout_gravity="center"
-            android:text="更换设备"/>
+            android:text="服务与条款"/>
     </LinearLayout>
 
     <View style="@style/DividerPadding"/>
@@ -96,7 +118,7 @@
             android:textColor="#FF000000"
             android:textSize="15dp"
             android:layout_gravity="center"
-            android:text="关于我们"/>
+            android:text="去App Store评分"/>
     </LinearLayout>
 
     <View style="@style/DividerPadding"/>
