@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.cherry.fullplayer.R;
-import com.zhouwei.mzbanner.MZBannerView;
-import com.zhouwei.mzbanner.holder.MZHolderCreator;
-import com.zhouwei.mzbanner.holder.MZViewHolder;
+import com.example.cherry.fullplayer.mzbanner.MZBannerView;
+import com.example.cherry.fullplayer.mzbanner.holder.MZHolderCreator;
+import com.example.cherry.fullplayer.mzbanner.holder.MZViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,10 +77,6 @@ public class WifiConnectHintActivity extends Activity {
                     first_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
                     first_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
                 }
-/*                else {
-                    second_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
-                    second_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
-                }*/
 
                 if (position == 1 && positionOffset > 0.5) {
                     third_number.setBackground(getResources().getDrawable(R.drawable.text_circle_bg));
@@ -91,11 +87,6 @@ public class WifiConnectHintActivity extends Activity {
                     second_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
                     second_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
                 }
-/*                else {
-                    third_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
-                    third_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
-                }*/
-
 
             }
 

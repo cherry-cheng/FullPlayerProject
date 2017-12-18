@@ -120,7 +120,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <com.zhouwei.mzbanner.MZBannerView
+    <com.example.cherry.fullplayer.mzbanner.MZBannerView
         android:id="@+id/banner_normal"
         android:layout_width="match_parent"
         android:layout_height="300dp"

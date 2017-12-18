@@ -3,12 +3,12 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-     <com.zhouwei.mzbanner.CustomViewPager
+     <com.example.cherry.fullplayer.mzbanner.CustomViewPager
          android:id="@+id/mzbanner_vp"
          android:layout_width="match_parent"
          android:layout_height="wrap_content">
 
-     </com.zhouwei.mzbanner.CustomViewPager>
+     </com.example.cherry.fullplayer.mzbanner.CustomViewPager>
      <RelativeLayout
          android:layout_width="match_parent"
          android:layout_height="wrap_content"

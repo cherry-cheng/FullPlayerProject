@@ -26,23 +26,23 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Scroller;
 
-import com.zhouwei.mzbanner.*;
-import com.zhouwei.mzbanner.holder.MZHolderCreator;
-import com.zhouwei.mzbanner.holder.MZViewHolder;
-import com.zhouwei.mzbanner.transformer.CoverModeTransformer;
-import com.zhouwei.mzbanner.transformer.ScaleYTransformer;
+import com.example.cherry.fullplayer.R;
+import com.example.cherry.fullplayer.mzbanner.holder.MZHolderCreator;
+import com.example.cherry.fullplayer.mzbanner.holder.MZViewHolder;
+import com.example.cherry.fullplayer.mzbanner.transformer.CoverModeTransformer;
+import com.example.cherry.fullplayer.mzbanner.transformer.ScaleYTransformer;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zhouwei on 17/5/26.
+ * Created by chengyonghui on 17/12/18.
  */
 
 public class MZBannerView<T> extends RelativeLayout {
     private static final String TAG = "MZBannerView";
-    private com.zhouwei.mzbanner.CustomViewPager mViewPager;
+    private CustomViewPager mViewPager;
     private MZPagerAdapter mAdapter;
     private List<T> mDatas;
     private boolean mIsAutoPlay = true;// 是否自动播放
@@ -55,7 +55,7 @@ public class MZBannerView<T> extends RelativeLayout {
     private LinearLayout mIndicatorContainer;//indicator容器
     private ArrayList<ImageView> mIndicators = new ArrayList<>();
     //mIndicatorRes[0] 为为选中，mIndicatorRes[1]为选中
-    private int []mIndicatorRes= new int[]{com.zhouwei.mzbanner.R.drawable.indicator_normal, com.zhouwei.mzbanner.R.drawable.indicator_selected};
+    private int []mIndicatorRes= new int[]{R.drawable.indicator_normal, R.drawable.indicator_selected};
     private int mIndicatorPaddingLeft = 0;// indicator 距离左边的距离
     private int mIndicatorPaddingRight = 0;//indicator 距离右边的距离
     private int mIndicatorPaddingTop = 0;//indicator 距离上边的距离
@@ -99,27 +99,27 @@ public class MZBannerView<T> extends RelativeLayout {
     }
 
     private void readAttrs(Context context,AttributeSet attrs){
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, com.zhouwei.mzbanner.R.styleable.MZBannerView);
-        mIsOpenMZEffect = typedArray.getBoolean(com.zhouwei.mzbanner.R.styleable.MZBannerView_open_mz_mode,true);
-        mIsMiddlePageCover = typedArray.getBoolean(com.zhouwei.mzbanner.R.styleable.MZBannerView_middle_page_cover,true);
-        mIsCanLoop = typedArray.getBoolean(com.zhouwei.mzbanner.R.styleable.MZBannerView_canLoop,true);
-        mIndicatorAlign = typedArray.getInt(com.zhouwei.mzbanner.R.styleable.MZBannerView_indicatorAlign,1);
-        mIndicatorPaddingLeft = typedArray.getDimensionPixelSize(com.zhouwei.mzbanner.R.styleable.MZBannerView_indicatorPaddingLeft,0);
-        mIndicatorPaddingRight = typedArray.getDimensionPixelSize(com.zhouwei.mzbanner.R.styleable.MZBannerView_indicatorPaddingRight,0);
-        mIndicatorPaddingTop = typedArray.getDimensionPixelSize(com.zhouwei.mzbanner.R.styleable.MZBannerView_indicatorPaddingTop,0);
-        mIndicatorPaddingBottom = typedArray.getDimensionPixelSize(com.zhouwei.mzbanner.R.styleable.MZBannerView_indicatorPaddingBottom,0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MZBannerView);
+        mIsOpenMZEffect = typedArray.getBoolean(R.styleable.MZBannerView_open_mz_mode,true);
+        mIsMiddlePageCover = typedArray.getBoolean(R.styleable.MZBannerView_middle_page_cover,true);
+        mIsCanLoop = typedArray.getBoolean(R.styleable.MZBannerView_canLoop,true);
+        mIndicatorAlign = typedArray.getInt(R.styleable.MZBannerView_indicatorAlign,1);
+        mIndicatorPaddingLeft = typedArray.getDimensionPixelSize(R.styleable.MZBannerView_indicatorPaddingLeft,0);
+        mIndicatorPaddingRight = typedArray.getDimensionPixelSize(R.styleable.MZBannerView_indicatorPaddingRight,0);
+        mIndicatorPaddingTop = typedArray.getDimensionPixelSize(R.styleable.MZBannerView_indicatorPaddingTop,0);
+        mIndicatorPaddingBottom = typedArray.getDimensionPixelSize(R.styleable.MZBannerView_indicatorPaddingBottom,0);
     }
 
 
     private void init(){
       View view = null;
         if(mIsOpenMZEffect){
-            view = LayoutInflater.from(getContext()).inflate(com.zhouwei.mzbanner.R.layout.mz_banner_effect_layout,this,true);
+            view = LayoutInflater.from(getContext()).inflate(R.layout.mz_banner_effect_layout,this,true);
         }else{
-            view = LayoutInflater.from(getContext()).inflate(com.zhouwei.mzbanner.R.layout.mz_banner_normal_layout,this,true);
+            view = LayoutInflater.from(getContext()).inflate(R.layout.mz_banner_normal_layout,this,true);
         }
-      mIndicatorContainer = (LinearLayout) view.findViewById(com.zhouwei.mzbanner.R.id.banner_indicator_container);
-      mViewPager = (com.zhouwei.mzbanner.CustomViewPager) view.findViewById(R.id.mzbanner_vp);
+      mIndicatorContainer = (LinearLayout) view.findViewById(R.id.banner_indicator_container);
+      mViewPager = (CustomViewPager) view.findViewById(R.id.mzbanner_vp);
       mViewPager.setOffscreenPageLimit(4);
 
       mMZModePadding = dpToPx(30);
