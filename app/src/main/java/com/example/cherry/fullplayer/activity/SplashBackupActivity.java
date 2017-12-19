@@ -31,7 +31,7 @@ public class SplashBackupActivity extends Activity {
 //                MyThread.openWifi();
 
 //                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-                startActivity(new Intent(SplashBackupActivity.this, CityActivity.class));
+                startActivity(new Intent(SplashBackupActivity.this, com.example.cherry.fullplayer.citypicker.MainActivity.class));
                 finish();
             }
         }.start();
