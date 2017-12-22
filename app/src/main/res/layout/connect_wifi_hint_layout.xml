@@ -120,7 +120,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <com.example.cherry.fullplayer.mzbanner.MZBannerView
+<!--    <com.example.cherry.fullplayer.mzbanner.MZBannerView
         android:id="@+id/banner_normal"
         android:layout_width="match_parent"
         android:layout_height="300dp"
@@ -128,6 +128,17 @@
         app:open_mz_mode="false"
         app:canLoop="true"
         app:indicatorAlign="center"
+        />-->
+    <ViewFlipper
+        android:id="@+id/marquee_viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:autoStart="true"
+        android:background="#e8e8e8"
+        android:flipInterval="2000"
+        android:layout_marginTop="20dp"
+        android:inAnimation="@anim/anim_in"
+        android:outAnimation="@anim/anim_out"
         />
 
 </LinearLayout>

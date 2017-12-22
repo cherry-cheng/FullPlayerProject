@@ -7,13 +7,13 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.example.cherry.fullplayer.R;
-import com.example.cherry.fullplayer.mzbanner.MZBannerView;
-import com.example.cherry.fullplayer.mzbanner.holder.MZHolderCreator;
-import com.example.cherry.fullplayer.mzbanner.holder.MZViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,11 +25,11 @@ import static android.content.ContentValues.TAG;
  */
 
 public class WifiConnectHintActivity extends Activity {
-    private MZBannerView mNormalBanner;
     public static final int []RES = new int[]{R.mipmap.image1,R.mipmap.image2,R.mipmap.image3};
     private TextView first_number = null, first_title = null;
     private TextView second_number = null, second_title = null;
     private TextView third_number = null, third_title =  null;
+    int i = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,96 +40,79 @@ public class WifiConnectHintActivity extends Activity {
         second_title = (TextView) findViewById(R.id.second_title);
         third_number = (TextView) findViewById(R.id.third_number);
         third_title = (TextView) findViewById(R.id.third_title);
-        mNormalBanner = (MZBannerView) findViewById(R.id.banner_normal);
+//        mNormalBanner = (MZBannerView) findViewById(R.id.banner_normal);
         List<Integer> list = new ArrayList<>();
         for(int i=0;i<RES.length;i++){
             list.add(RES[i]);
         }
-        mNormalBanner.setPages(list, new MZHolderCreator<BannerViewHolder>() {
+
+        ViewFlipper mViewFlipper = (ViewFlipper) findViewById(R.id.marquee_viewFlipper);
+        LinearLayout shenzhenIndexLayout = (LinearLayout) View.inflate(this, R.layout.marquee_item_layout1, null);
+        LinearLayout shangzhenIndexLayout = (LinearLayout) View.inflate(this, R.layout.marquee_item_layout2, null);
+        LinearLayout cyIndexLayout = (LinearLayout) View.inflate(this, R.layout.marquee_item_layout3, null);
+        mViewFlipper.addView(shenzhenIndexLayout);
+        mViewFlipper.addView(shangzhenIndexLayout);
+        mViewFlipper.addView(cyIndexLayout);
+        mViewFlipper.getInAnimation().setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public BannerViewHolder createViewHolder() {
-                return new BannerViewHolder();
-            }
-        });
-        mNormalBanner.setIndicatorVisible(true);
-        mNormalBanner.addPageChangeLisnter(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-                Log.i("cyh11", "--" + position + "--" + positionOffset);
-                Log.e("cyhcyh","----->addPageChangeLisnter:"+position + "positionOffset:"+positionOffset+ "positionOffsetPixels:"+positionOffsetPixels);
-                if (position == 2 && positionOffset > 0.5) {
-                    first_number.setBackground(getResources().getDrawable(R.drawable.text_circle_bg));
-                    first_title.setTextColor(getResources().getColor(R.color.textGreenColor));
-
-                    second_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
-                    second_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
-                    third_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
-                    third_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
+            public void onAnimationStart(Animation animation) {
+                Log.i("cyh--", "onAnimationStart");
+                i ++;
+                if (i % 3 == 0) {
+                    i = 0;
                 }
-
-                if (position == 0 && positionOffset > 0.5) {
-                    second_number.setBackground(getResources().getDrawable(R.drawable.text_circle_bg));
-                    second_title.setTextColor(getResources().getColor(R.color.textGreenColor));
-
-                    third_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
-                    third_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
-                    first_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
-                    first_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
-                }
-
-                if (position == 1 && positionOffset > 0.5) {
-                    third_number.setBackground(getResources().getDrawable(R.drawable.text_circle_bg));
-                    third_title.setTextColor(getResources().getColor(R.color.textGreenColor));
-
-                    first_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
-                    first_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
-                    second_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
-                    second_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
-                }
-
+                changeIndicator(i);
             }
 
             @Override
-            public void onPageSelected(int position) {
-                Log.e(TAG,"addPageChangeLisnter:"+position);
-                Log.i("cyh33", "addPageChange = " + position);
+            public void onAnimationEnd(Animation animation) {
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-                Log.i("cyh22", "state = " + state);
+            public void onAnimationRepeat(Animation animation) {
+                Log.i("cyh--", "onAnimationRepeat");
             }
         });
     }
 
-    public static class BannerViewHolder implements MZViewHolder<Integer> {
-        private ImageView mImageView;
-        @Override
-        public View createView(Context context) {
-            // 返回页面布局文件
-            View view = LayoutInflater.from(context).inflate(R.layout.banner_item,null);
-            mImageView = (ImageView) view.findViewById(R.id.banner_image);
-            return view;
-        }
+    private void changeIndicator(int i) {
+        if (i == 1) {
+            second_number.setBackground(getResources().getDrawable(R.drawable.text_circle_bg));
+            second_title.setTextColor(getResources().getColor(R.color.textGreenColor));
 
-        @Override
-        public void onBind(Context context, int position, Integer data) {
-            // 数据绑定
-            mImageView.setImageResource(data);
+            third_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
+            third_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
+            first_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
+            first_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
+        }
+        if (i == 2) {
+            third_number.setBackground(getResources().getDrawable(R.drawable.text_circle_bg));
+            third_title.setTextColor(getResources().getColor(R.color.textGreenColor));
+
+            first_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
+            first_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
+            second_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
+            second_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
+        }
+        if (i == 0) {
+            first_number.setBackground(getResources().getDrawable(R.drawable.text_circle_bg));
+            first_title.setTextColor(getResources().getColor(R.color.textGreenColor));
+
+            second_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
+            second_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
+            third_number.setBackground(getResources().getDrawable(R.drawable.text_circle_grey_gb));
+            third_title.setTextColor(getResources().getColor(R.color.colorGreyLittle));
         }
     }
+
 
     @Override
     public void onPause() {
         super.onPause();
-        mNormalBanner.pause();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        mNormalBanner.start();
     }
 }
