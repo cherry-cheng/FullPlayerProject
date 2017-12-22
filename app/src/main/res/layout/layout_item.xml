@@ -16,8 +16,8 @@
         android:layout_width="15.0dp"
         android:layout_height="15.0dp"
         android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:background="@color/button_color"/>
+        android:src="@mipmap/city_icon_select"
+        android:layout_alignParentRight="true" />
 
     <View
         android:id="@+id/view_bottom"
