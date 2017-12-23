@@ -19,7 +19,7 @@
             android:text="密码修改成功\n请重新连接"
             android:textColor="#FF000000"
             android:layout_gravity="center"
-            android:textSize="32dp"
+            android:textSize="19dp"
             android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -33,12 +33,12 @@
             android:layout_height="45dp"
             android:text="请牢记新密码"
             android:textColor="#8A000000"
-            android:textSize="11sp"/>
+            android:textSize="9dp"/>
         <TextView
             android:gravity="center"
             android:id="@+id/tv_password"
             android:text="1234567890"
-            android:textSize="18dp"
+            android:textSize="16dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:background="#10000000"
@@ -52,11 +52,11 @@
             android:id="@+id/tv_ok"
             android:clickable="true"
             android:text="确 定"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="23dp"
             android:padding="15dp"
             android:textColor="#FF00CFA1"
             android:layout_gravity="center"
-            android:textSize="16dp"
+            android:textSize="11dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>

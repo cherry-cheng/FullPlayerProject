@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,37 +13,42 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
+            android:textSize="17dp"
             android:id="@+id/title_city"
             android:layout_centerVertical="true"
             android:textColor="#FF000000"
             android:layout_marginLeft="18dp"
             android:text="连接设备WiFi"/>
-        <TextView
-            android:id="@+id/choosed_city"
-            android:text="上海市"
-            android:textColor="#FF4A4A4A"
-            android:textSize="12dp"
-            android:layout_marginRight="40dp"
+        <LinearLayout
+            android:id="@+id/city_location_ll"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:id="@+id/ivSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/citylists_icon_gps"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="12dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/choosed_city"
+                android:text="上海市"
+                android:textColor="#FF4A4A4A"
+                android:textSize="12dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/ivSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_gravity="center"
+                android:src="@drawable/citylists_icon_gps"
+                android:layout_marginRight="12dp" />
+        </LinearLayout>
     </RelativeLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="42dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -57,14 +63,14 @@
                 android:gravity="center"
                 android:background="@drawable/text_circle_bg"
                 android:textColor="#FFFFFFFF"
-                android:textSize="14dp"
+                android:textSize="9dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/first_title"
-                android:text="  设置-WiFi，选择“全播WiFi”     "
+                android:text="  设置-WiFi，选择“全播WiFi”       "
                 android:textColor="#FF333333"
-                android:textSize="14dp"
+                android:textSize="9dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -73,7 +79,7 @@
             android:layout_width="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/second_number"
@@ -82,15 +88,20 @@
                 android:gravity="center"
                 android:background="@drawable/text_circle_grey_gb"
                 android:textColor="#FFFFFFFF"
-                android:textSize="14dp"
+                android:textSize="9dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/second_title"
-                android:text="  输入密码，等待连接成功         "
+                android:text="  输入密码，等待连接成功   "
                 android:textColor="@color/colorGreyLittle"
-                android:textSize="14dp"
+                android:textSize="9dp"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/icon_wifi"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/info"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -98,7 +109,7 @@
             android:layout_width="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/third_number"
@@ -107,38 +118,73 @@
                 android:gravity="center"
                 android:background="@drawable/text_circle_grey_gb"
                 android:textColor="#FFFFFFFF"
-                android:textSize="14dp"
+                android:textSize="9dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/third_title"
-                android:text="  返回全播APP，免费播放视频"
+                android:text="  返回全播APP，免费播放视频   "
                 android:textColor="@color/colorGreyLittle"
-                android:textSize="14dp"
+                android:textSize="9dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
 
-<!--    <com.example.cherry.fullplayer.mzbanner.MZBannerView
-        android:id="@+id/banner_normal"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="20dp"
-        app:open_mz_mode="false"
-        app:canLoop="true"
-        app:indicatorAlign="center"
-        />-->
     <ViewFlipper
         android:id="@+id/marquee_viewFlipper"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="280dp"
         android:autoStart="true"
-        android:background="#e8e8e8"
-        android:flipInterval="2000"
-        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:flipInterval="1400"
+        android:layout_gravity="center"
+        android:layout_marginTop="14dp"
         android:inAnimation="@anim/anim_in"
         android:outAnimation="@anim/anim_out"
         />
+
+    <Button
+        android:id="@+id/go_connection_bt"
+        android:layout_width="wrap_content"
+        android:text="看懂了，去连接"
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_gravity="center"
+        android:textColor="#ffffffff"
+        android:background="@drawable/btn_search"
+        android:textSize="10dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+        <com.example.cherry.fullplayer.view.CheckBoxSample
+            android:id="@+id/no_hint_checkbox"
+            app:color_background="@color/button_color"
+            app:color_border="@color/colorGreyLittle"
+            app:size="18dp"
+            android:padding="2dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_ok"
+            android:gravity="center"
+            android:layout_marginLeft="8dp"
+            android:text="不再提示"
+            android:layout_gravity="center"
+            android:textColor="#ff333333"
+            android:textSize="9dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+    </LinearLayout>
 
 </LinearLayout>

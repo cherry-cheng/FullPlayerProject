@@ -23,7 +23,7 @@ public class SplashBackupActivity extends Activity {
             public void run() {
                 super.run();
                 try {
-                    sleep(1500);
+                    sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

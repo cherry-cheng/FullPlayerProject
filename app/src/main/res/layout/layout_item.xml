@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50.0dp"
         android:gravity="center_vertical"
-        android:textSize="18.0sp"
+        android:textSize="10dp"
         android:textColor="@color/city_black"/>
 
     <ImageView

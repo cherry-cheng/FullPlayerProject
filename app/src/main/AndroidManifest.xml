@@ -55,8 +55,10 @@
             android:theme="@style/mytheme"/>
         <activity android:name=".activity.QpopActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.WifiConnectHintActivity"/>
-        <activity android:name=".citypicker.MainActivity"/>
+        <activity android:name=".activity.WifiConnectHintActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ServiceContractActivity"
+            android:screenOrientation="portrait"/>
         <service android:name=".service.WifiDetectorService"/>
 
         <meta-data android:name="com.amap.api.v2.apikey" android:value="8fb1a3c7079adbf57c180f2acd4cffd7">

@@ -4,32 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="184dp">
-    </FrameLayout>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/launch_logo" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:src="@mipmap/about_img_logo"
+            android:layout_width="wrap_content"
+            android:layout_above="@+id/tv_look"
+            android:layout_marginBottom="3dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content" />
         <TextView
             android:gravity="center_horizontal"
             android:id="@+id/tv_look"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="想你所看，看你所想"
-            android:textColor="#22000000"
-            android:textSize="13sp"
+            android:text="全播-个人版"
+            android:textColor="#ff00cfa1"
+            android:textSize="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="36dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"

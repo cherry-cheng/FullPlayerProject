@@ -12,21 +12,44 @@
         android:layout_width="268dp"
         android:layout_height="wrap_content">
 
-        <ImageView
+<!--        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:src="@drawable/rotate_img_scan"/>
+            android:src="@mipmap/img_signalintensity"/>-->
+        <LinearLayout
+            android:background="@mipmap/img_signalintensity"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="22dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="信号强度"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/wifi_level_tv"
+                android:text="良"
+                android:textSize="34dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
         <TextView
             android:id="@+id/tv_content"
             android:layout_marginRight="18dp"
             android:layout_marginLeft="18dp"
             android:gravity="center"
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:text="请移动设备天线，调整信号强度"
             android:textColor="#8A000000"
-            android:textSize="11sp"/>
+            android:textSize="9dp"/>
         <LinearLayout
             android:layout_marginBottom="8dp"
             android:gravity="center"
@@ -47,7 +70,7 @@
                 android:id="@+id/tv_ok"
                 android:gravity="center"
                 android:layout_marginLeft="8dp"
-                android:textSize="13sp"
+                android:textSize="9dp"
                 android:textColor="#FFBBB8B9"
                 android:text="不再提醒"
                 android:layout_width="wrap_content"
@@ -57,7 +80,7 @@
                 android:layout_marginLeft="48dp"
                 android:id="@+id/tv_back"
                 android:gravity="center"
-                android:textSize="13sp"
+                android:textSize="11dp"
                 android:textColor="@color/button_color"
                 android:text="我知道了"
                 android:layout_width="wrap_content"
@@ -68,9 +91,18 @@
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/adContainer"
         android:layout_centerHorizontal="true"
-        android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="信号强度"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/wifi_tv"
+            android:text="良"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
 </RelativeLayout>

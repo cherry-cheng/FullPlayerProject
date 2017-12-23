@@ -2,6 +2,7 @@ package com.example.cherry.fullplayer.activity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +18,7 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
+import com.example.cherry.fullplayer.MainActivity;
 import com.example.cherry.fullplayer.R;
 import com.example.cherry.fullplayer.adapter.MyAdapter;
 import com.example.cherry.fullplayer.view.WaveSideBarView;
@@ -42,7 +44,8 @@ public class CityActivity extends AppCompatActivity implements MyAdapter.OnItemC
     private final int RC_LOCATION_CONTACTS_PERM = 124;
     private AMapLocationClient mLocationClient;
     private TextView choosed_city = null;
-    private ImageView ivSettings = null;
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
 
     String[] perms = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
@@ -53,8 +56,7 @@ public class CityActivity extends AppCompatActivity implements MyAdapter.OnItemC
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         choosed_city = (TextView) findViewById(R.id.choosed_city);
         button = (Button) findViewById(R.id.button);
-        ivSettings = (ImageView) findViewById(R.id.ivSettings);
-        ivSettings.setOnClickListener(new ivSettingsClickListener());
+        button.setOnClickListener(new ivSettingsClickListener());
         final MyAdapter adapter = new MyAdapter(CityActivity.this);
         adapter.setOnItemClickListener(this);
         recyclerView.setAdapter(adapter);
@@ -79,21 +81,28 @@ public class CityActivity extends AppCompatActivity implements MyAdapter.OnItemC
                 recyclerView.scrollToPosition(pos);
             }
         });
+        //获取preferences和editor对象
+        preferences = getSharedPreferences("quanbo", MODE_PRIVATE);
+        editor = preferences.edit();
         initData();
         initLocation();
     }
 
     @Override
-    public void onItemClick(int postion) {
-        button.setBackgroundColor(getResources().getColor(R.color.button_color));
+    public void onItemClick(String cityName) {
+//        button.setBackgroundColor(getResources().getColor(R.color.button_color));
+        Log.i("cyh", "cyh cityName = " + cityName);
     }
 
     private class ivSettingsClickListener implements View.OnClickListener {
 
         @Override
         public void onClick(View view) {
-//            startActivity(new Intent(CityActivity.this, MainActivity.class));
-            startActivity(new Intent(CityActivity.this, WifiConnectHintActivity.class));
+            if (preferences.getBoolean("wifihint", false)) {
+                startActivity(new Intent(CityActivity.this, MainActivity.class));
+            } else {
+                startActivity(new Intent(CityActivity.this, WifiConnectHintActivity.class));
+            }
         }
     }
 

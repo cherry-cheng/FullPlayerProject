@@ -25,4 +25,11 @@
         <item>Y</item>
         <item>Z</item>
     </array>
+
+    <string-array name="wifi_text">
+        <item>优</item>
+        <item>良</item>
+        <item>差</item>
+        <item>无</item>
+    </string-array>
 </resources>

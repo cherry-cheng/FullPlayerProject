@@ -30,7 +30,7 @@ public class MyAdapter extends Adapter implements View.OnClickListener {
     private OnItemClickListener onItemClickListener;
 
     public interface OnItemClickListener{
-        void onItemClick(int postion);
+        void onItemClick(String CityName);
     }
 
     public static final String[] mCitiesStrings = {
@@ -138,8 +138,10 @@ public class MyAdapter extends Adapter implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Log.i("cyh", "里面adapter被点击了....");
         if(onItemClickListener!=null){
-            onItemClickListener.onItemClick((Integer) v.getTag());
+//            onItemClickListener.onItemClick((Integer) v.getTag());
+            onItemClickListener.onItemClick(cities.get((Integer) v.getTag()).name);
         }
         if(choosePosition!=-1){
             int p = choosePosition;

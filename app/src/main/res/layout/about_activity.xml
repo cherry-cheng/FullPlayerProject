@@ -27,7 +27,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:text="设置"
-            android:textSize="18dp"/>
+            android:textSize="11dp"/>
 
     </RelativeLayout>
 
@@ -37,13 +37,13 @@
         android:id="@+id/Setting_WifiSignal"
         android:layout_width="match_parent"
         android:layout_marginLeft="16dp"
-        android:layout_height="48dp">
+        android:layout_height="37dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FF000000"
-            android:textSize="15dp"
+            android:textSize="10dp"
             android:layout_gravity="center"
             android:text="调整信号强度"/>
     </LinearLayout>
@@ -54,13 +54,13 @@
         android:id="@+id/Setting_ChangePwd"
         android:layout_width="match_parent"
         android:layout_marginLeft="16dp"
-        android:layout_height="48dp">
+        android:layout_height="37dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FF000000"
-            android:textSize="15dp"
+            android:textSize="10dp"
             android:layout_gravity="center"
             android:text="修改设备密码"/>
     </LinearLayout>
@@ -71,13 +71,13 @@
         android:id="@+id/Setting_ChangeDevice"
         android:layout_width="match_parent"
         android:layout_marginLeft="16dp"
-        android:layout_height="48dp">
+        android:layout_height="37dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FF000000"
-            android:textSize="15dp"
+            android:textSize="10dp"
             android:layout_gravity="center"
             android:text="更换设备"/>
     </LinearLayout>
@@ -88,13 +88,13 @@
         android:id="@+id/Setting_Aboutus"
         android:layout_width="match_parent"
         android:layout_marginLeft="16dp"
-        android:layout_height="48dp">
+        android:layout_height="37dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FF000000"
-            android:textSize="15dp"
+            android:textSize="10dp"
             android:layout_gravity="center"
             android:text="关于我们"/>
     </LinearLayout>
